@@ -31,3 +31,16 @@ export const getAllUser = async (req, res) => {
 
     }
 }
+
+export const getUserById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const userExist = await User.findById(id);
+        if (!userExist) {
+            return res.status(404).json({ message: "user not found." })
+        }
+        res.status(200).json(userExist);
+    } catch (error) {
+        res.status(500).json({ errorMessage: error.message });
+    }
+};
