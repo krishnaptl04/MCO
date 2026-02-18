@@ -1,5 +1,5 @@
 import express from "express"
-import mongoose from "mongoose"
+import mangoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import route from "./routes/userRoute.js";
@@ -9,13 +9,13 @@ const app = express();
 app.use(bodyParser.json());
 dotenv.config();
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 8000;
 const MONGOURL = process.env.MONGO_URL;
 
 mangoose
     .connect(MONGOURL)
     .then(() => {
-        console.log("DB connected sucessfully.");
+        console.log("DB connected sucessfully")
         app.listen(PORT, () => {
             console.log(`Server is running on port:${PORT}`)
 
