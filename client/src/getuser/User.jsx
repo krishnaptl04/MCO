@@ -5,7 +5,7 @@ const User = () => {
   return (
     <div className="userTable">
       <button type="button" class="btn btn-primary">
-        Add User
+        Add User <i class="fa-solid fa-user-plus"></i>
       </button>
       <table className="table table-bordered">
         <thead>
@@ -23,7 +23,15 @@ const User = () => {
             <td>Joun</td>
             <td>joun@gmail.com</td>
             <td>Canada</td>
-            <td>Update | Delete</td>
+            <td className="actionButtons">
+              <button type="button" class="btn btn-info">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+
+              <button type="button" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
